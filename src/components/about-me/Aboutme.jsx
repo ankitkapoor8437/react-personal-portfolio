@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../about-me/Aboutme.css";
 import mainImage from "../../assets/main-image.jpeg";
+import Experiences from "./experience";
+import Skills from "./skills";
+import Education from "./education";
 
 const About = () => {
     const [activeTab, setActiveTab] = useState("experience");
@@ -51,116 +54,58 @@ const About = () => {
 
                         <div className={`tab-contents ${activeTab === "experience" ? "active-tab" : ""}`} id="experience">
                             <ul>
-                                <li>
-                                    <span>
-                                        Pantheon India Private Limited, Chennai — <i>Jr. Application Developer</i>{" "}
-                                    </span>
-                                    <br />
-                                    <i>March 2022 - PRESENT</i>
-                                    <br />
-                                    Pantheon Global Services organization specializes in providing of Wight array of software
-                                    development consulting and support services.
-                                    <br />
-                                    <br />
-                                </li>
-
-                                <li>
-                                    <span>
-                                        Web Developer Freelance, Sampoorn Child Development Center, Noida — <i>Freelance Developer</i>
-                                    </span>
-                                    <br />
-                                    <i>December 2020 - February 2021</i>
-                                    <br />
-                                    SCDC is a development center for physically and specially challenged children.
-                                    <br />
-                                    <br />
-                                </li>
-
-                                <li>
-                                    <span>
-                                        Digital Marketing Intern, Batra Pad Printing And Automation, Ludhiana —{" "}
-                                        <i>Digital Marketing Intern</i>
-                                    </span>
-                                    <br />
-                                    <i>July 2019 - December 2019</i>
-                                    <br />
-
-                                    <br />
-                                    <br />
-                                </li>
+                                {
+                                    Experiences.map(({ company, location, position, startDate, endDate, description }) => (
+                                        <li >
+                                            <span>
+                                                {company}, {location} — <i>{position}</i>
+                                            </span>
+                                            <br />
+                                            <i>{startDate} - {endDate}</i>
+                                            <br />
+                                            {description}
+                                            <br />
+                                            <br />
+                                        </li>
+                                    ))
+                                }
                             </ul>
                         </div>
 
                         <div className={`tab-contents ${activeTab === "skills" ? "active-tab" : ""}`} id="skills">
                             <ul>
-                                <li>
-                                    <span>Languages</span>
-                                    <br />
-                                    <i> HTML, CSS, JAVASCRIPT, C++, Python</i>
-                                    <br />
-                                    <br />
-                                </li>
-                                <li>
-                                    <span>Frame-works</span>
-                                    <br />
-                                    <i> React, Node.js, Express.js, Django </i>
-                                    <br />
-                                    <br />
-                                </li>
-                                <li>
-                                    <span>Design Platforms</span>
-                                    <br />
-                                    <i> Adobe Photoshop, Figma, Canva
-                                    </i>
-                                    <br />
-                                    <br />
-                                </li>
-                                <li>
-                                    <span>DataBases</span>
-                                    <br />
-                                    <i> SQL, MongoDB
-                                    </i>
-                                    <br />
-                                    <br />
-                                </li>
+                                {Skills.map(({ heading, skill }) => (
+                                    <li>
+                                        <span>{heading}</span>
+                                        <br />
+                                        <i>{skill}</i>
+                                        <br />
+                                        <br />
+                                    </li>
+                                ))
+                                }
                             </ul>
                         </div>
                         <div className={`tab-contents ${activeTab === "education" ? "active-tab" : ""}`} id="education">
                             <ul>
-                                <li>
-                                    <span>Guru Gobind Singh Indraprastha University, Delhi</span>
-                                    <br />
-                                    <i> August 2017 - July 2021</i>
-                                    <br />
-                                    Graduated with B.Tech Degree in Computer Science Engineering.
-                                    <br />
-                                    <br />
-                                </li>
-                                <li>
-                                    <span> USPC Jain Public School, Ludhiana</span>
-                                    <br />
-                                    <i> March - 2017</i>
-                                    <br />
-                                    Completed my 12th Standard with 75.60%.
-                                    <br />
-                                    <br />
-                                </li>
-                                <li>
-                                    <span> USPC Jain Public School, Ludhiana</span>
-                                    <br />
-                                    <i> March - 2016</i>
-                                    <br />
-                                    Completed my 10th Standard with 91.2%.
-                                    <br />
-                                    <br />
-                                </li>
+                                {Education.map(({ school, duration, description }) => (
+                                    <li>
+                                        <span>{school}</span>
+                                        <br />
+                                        <i>{duration}</i>
+                                        <br />
+                                        {description}
+                                        <br />
+                                        <br />
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     );
 }

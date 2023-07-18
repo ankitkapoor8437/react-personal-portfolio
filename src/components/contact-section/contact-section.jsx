@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import '../contact-section/contact-section.css';
+import Axios from "axios";
 
 const ContactSection = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+    const [submitMessage, setSubmitMessage] = useState("");
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        // console.log(name, value);
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        // console.log(formData);
+        try {
+            const response = await Axios.post("https://testing-backend-8yjx.onrender.com/api/queries", formData);
+            // console.log(response.data);
+            setSubmitMessage("Data saved successfully!");
+            setFormData({
+                name: "",
+                email: "",
+                message: ""
+            });
+            // Handle the response as needed
+            setTimeout(() => {
+                setSubmitMessage("");
+            }, 3000);
+        } catch (error) {
+            // Handle error
+            console.error(error);
+        }
+    };
+
     return (
 
         // <!-- CONTACT SECTION -->
@@ -29,13 +70,13 @@ const ContactSection = () => {
                     </div>
                     {/* <!-- right --> */}
                     <div className="contact-right">
-                        <form name='submit-to-google-sheet'>
-                            <input type="text" name="Name" placeholder="Your Name" required />
-                            <input type="email" name="Email" id="" placeholder="Your Email" required />
-                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" name="name" placeholder="Your Name" onChange={handleChange} required value={formData.name} />
+                            <input type="email" name="email" id="" placeholder="Your Email" onChange={handleChange} required value={formData.email} />
+                            <textarea name="message" rows="6" placeholder="Your Message" onChange={handleChange} value={formData.message}></textarea>
                             <button type="submit" className="btn btn2">Submit</button>
                         </form>
-                        <span id="msg"></span>
+                        <span id="msg">{submitMessage}</span>
                     </div>
                 </div>
             </div>

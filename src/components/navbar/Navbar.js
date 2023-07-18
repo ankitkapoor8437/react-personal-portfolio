@@ -14,6 +14,7 @@ const Navbar = () => {
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#signIn">Sign In</a></li>
                     {/* <i class="fa-solid fa-xmark" onclick="closemenu()"></i> */}
                 </ul>
                 {/* <i className="fa-solid fa-bars" onclick="openmenu()"></i> */}

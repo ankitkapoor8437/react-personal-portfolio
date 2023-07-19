@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../about-me/Aboutme.css";
+import "./Aboutme.css";
 import mainImage from "../../assets/main-image.jpeg";
-import Experiences from "../../data-json/experience";
-import Skills from "../../data-json/skills";
-import Education from "../../data-json/education";
+import Experiences from "./experience";
+import Skills from "./skills";
+import Education from "./education";
 
 const About = () => {
     const [activeTab, setActiveTab] = useState("experience");

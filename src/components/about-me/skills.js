@@ -5,15 +5,15 @@ const Skills = [
     },
     {
         "heading": "Frameworks",
-        "skill": "HTML, CSS, JavaScript, C++, Python"
+        "skill": "React, Django, Flask"
     },
     {
-        "heading": "Design PLatforms",
-        "skills": "HTML, CSS, JavaScript, C++, Python"
+        "heading": "Design Platforms",
+        "skill": "Adobe Photoshop, Figma, Canva"
     },
     {
         "heading": "Databases",
-        "skill": "HTML, CSS, JavaScript, C++, Python"
+        "skill": "SQL, MongoDB"
     },
 ]
 

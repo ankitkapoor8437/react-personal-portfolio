@@ -14,13 +14,12 @@ const Portfolio = () => {
     return (
         <div id="header">
             <Navbar />
-            <Introduction/>
+            <Introduction />
             <About />
             <PortfolioSection />
             <ServiceSection />
             <ContactSection />
             <CopyrightSection />
-            <Login />
         </div>
     );
 }

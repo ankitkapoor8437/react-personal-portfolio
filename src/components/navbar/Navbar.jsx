@@ -1,20 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import '../navbar/Navbar.css'
 import ExampleComponent from "../typed-animation/typed";
-
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
+    const [display, setDisplay] = useState(false);
+
+
+    const handleClickIn = () => {
+            setDisplay(true);
+            console.log(display);
+    }
+
+    const handleClickOut = () => {
+        if (display == true) {
+            setDisplay(false);
+            console.log(display);
+        }
+    }
+
     return (
         <div className="container">
             <div className="nav">
                 <img src="" alt="" class="logo" />
                 <ul id="sideMenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#signIn">Sign In</a></li>
+                    <li><a href="/#header">Home</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#portfolio">Portfolio</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                    <li><a href="/admin/#login" onClick={handleClickIn} >Sign In</a></li>
+                    <li><a href="/#signIn" onClick={handleClickOut}>Sign Out</a></li>
+
+
                     {/* <i class="fa-solid fa-xmark" onclick="closemenu()"></i> */}
                 </ul>
                 {/* <i className="fa-solid fa-bars" onclick="openmenu()"></i> */}
@@ -22,7 +42,7 @@ const Navbar = () => {
             </div>
 
 
-            <div className="header-text">
+            {/* <div className="header-text">
                 <p>
                     Front-End Developer.
                 </p>
@@ -33,7 +53,9 @@ const Navbar = () => {
                     apply my technical expertise, creativity, and passion for web development, while constantly learning
                     and improving my skills.
                 </p>
-            </div>
+            </div> */}
+
+            
         </div>
     );
 }

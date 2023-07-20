@@ -8,7 +8,7 @@ const ExampleComponent = () => {
         'Ankit Kapoor', // Types 'Ankit Kapoor'
         1000, // Waits 1s
         () => {
-          console.log('Sequence completed'); // Place optional callbacks anywhere in the array
+          // console.log('Sequence completed'); // Place optional callbacks anywhere in the array
         }
       ]}
       wrapper="span"

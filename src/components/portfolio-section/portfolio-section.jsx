@@ -1,51 +1,48 @@
 import React, { useState } from "react";
 import '../portfolio-section/portfolio-section.css';
-import work1 from '../../assets/work-1.png';
-import work2 from '../../assets/work-2.png';
-import work3 from '../../assets/work-3.png';
-import work4 from '../../assets/work-4.jpg';
-import work5 from '../../assets/work-5.jpg';
-import work6 from '../../assets/work-6.jpg';
+
 import axios from "axios";
 import { useEffect } from "react";
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import projects from '../../data-json/projects';
 
 const PortfolioSection = () => {
-    const [projects, setProjects] = useState([]);
+    // const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get("https://testing-backend-8yjx.onrender.com/api/projects");
-                // Update the state with the fetched projects data
-                setProjects(response.data);
-            } catch (error) {
-                // Handle error
-                console.error(error);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get("https://testing-backend-8yjx.onrender.com/api/projects");
+    //             // Update the state with the fetched projects data
+    //             setProjects(response.data);
+    //         } catch (error) {
+    //             // Handle error
+    //             console.error(error);
+    //         }
+    //     };
 
-        fetchData();
-    }, []);
+    //     fetchData();
+    // }, []);
 
+    // console.log(projects);
     return (
         <div id="portfolio">
             <div className="container">
                 <h1 className="subTitle">My Projects</h1>
 
                 <div className="work-list">
-                    <Slider dots={true} infinite={true} slidesToShow={5} slidesToScroll={2}>
-                        {projects.map(({ _id, projectName, projectUrl, description, image, typeProject }) => (
+                    <Slider dots={true} infinite={true} slidesToShow={3} slidesToScroll={2}>
+                        {projects.map(({ _id, projectName, projectUrl, description, image }) => (
                             <div key={_id} className="work">
-                                <img src={work4} alt="" />
+                                <img src={image} alt="" />
                                 <div className="layer">
                                     <h3 className="project-headings">{projectName}</h3>
                                     <p>{description}</p>
                                     <br />
-                                    <span><i>{typeProject}</i></span>
+                                    {/* <span><i>{typeProject}</i></span> */}
                                     <a href={projectUrl}><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                             </div>

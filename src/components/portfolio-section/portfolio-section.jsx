@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import '../portfolio-section/portfolio-section.css';
 
-import axios from "axios";
-import { useEffect } from "react";
+// import axios from "axios";
+// import { useEffect } from "react";
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

@@ -1,6 +1,6 @@
 import React from "react";
 import '../routes/portfolio.css'
-import About from "../components/about-me/Aboutme";
+// import About from "../components/about-me/Aboutme";
 import Navbar from "../components/navbar/Navbar";
 // import PortfolioSection from "../components/portfolio-section/portfolio-section";
 // import ServiceSection from "../components/service-section/service-section";

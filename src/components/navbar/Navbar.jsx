@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import '../navbar/Navbar.css'
-import ExampleComponent from "../typed-animation/typed";
-import { useNavigate } from "react-router-dom";
+// import ExampleComponent from "../typed-animation/typed";
+// import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const [display, setDisplay] = useState(false);
+    // const [display, setDisplay] = useState(false);
 
 
-    const handleClickIn = () => {
-            setDisplay(true);
-            console.log(display);
-    }
+    // const handleClickIn = () => {
+    //         setDisplay(true);
+    //         console.log(display);
+    // }
 
-    const handleClickOut = () => {
-        if (display == true) {
-            setDisplay(false);
-            console.log(display);
-        }
-    }
+    // const handleClickOut = () => {
+    //     if (display == true) {
+    //         setDisplay(false);
+    //         console.log(display);
+    //     }
+    // }
 
     return (
         <div className="container">

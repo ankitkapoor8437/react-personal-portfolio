@@ -26,7 +26,7 @@ const ContactSection = () => {
         // console.log(formData);
         try {
             const response = await Axios.post("https://testing-backend-8yjx.onrender.com/api/queries", formData);
-            // console.log(response.data);
+            console.log(response.data);
             setSubmitMessage("Data saved successfully!");
             setFormData({
                 name: "",

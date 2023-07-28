@@ -31,8 +31,7 @@ const Navbar = () => {
                     <li><a href="/#services">Services</a></li>
                     <li><a href="/#portfolio">Portfolio</a></li>
                     <li><a href="/#contact">Contact</a></li>
-                    <li><a href="/admin/#login" onClick={handleClickIn} >Sign In</a></li>
-                    <li><a href="/#signIn" onClick={handleClickOut}>Sign Out</a></li>
+                    <li><a href="/admin/#login" onClick={handleClickIn} >Login</a></li>
 
 
                     {/* <i class="fa-solid fa-xmark" onclick="closemenu()"></i> */}

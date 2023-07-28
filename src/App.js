@@ -10,7 +10,7 @@ import ServiceSection from "../src/components/service-section/service-section";
 import ContactSection from "../src/components/contact-section/contact-section";
 import CopyrightSection from "../src/components/copyright-section/copyright-section";
 import Login from "../src/components/admin-section/login";
-import AdminRoute from './routes/admin';
+import AdminRoute from './routes/admin-route';
 
 function App() {
   return (

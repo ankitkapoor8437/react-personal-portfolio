@@ -6,7 +6,7 @@ import PortfolioSection from "../components/portfolio-section/portfolio-section"
 import ServiceSection from "../components/service-section/service-section";
 import ContactSection from "../components/contact-section/contact-section";
 import CopyrightSection from "../components/copyright-section/copyright-section";
-import Login from "../components/admin-section/login";
+// import Login from "../components/admin-section/login";
 import { Introduction } from "../introduction/introduction";
 
 
